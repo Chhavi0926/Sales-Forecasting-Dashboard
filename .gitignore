@@ -1,0 +1,51 @@
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Data files
+data/raw/*
+!data/raw/.gitkeep
+
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/clean_superstore.csv
+
+# Models
+models/*.pkl
+models/*.joblib
+models/*.h5
+
+# Outputs
+outputs/plots/*
+!outputs/plots/.gitkeep
+outputs/reports/*
+!outputs/reports/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/
