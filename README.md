@@ -158,19 +158,19 @@ The dashboard is designed for deployment using **Streamlit Community Cloud**.
 
 ### 📊 Dashboard Overview
 
-<img src="outputs/screenshots/dashboard.png" width="90%"/>
+<img src="./outputs/screenshots/dashboard.png" width="90%"/>
 
 <br><br>
 
 ### 📈 Actual vs Predicted Sales
 
-<img src="outputs/screenshots/actual_vs_predicted.png" width="90%"/>
+<img src="./outputs/screenshots/actual_vs_predicted.png" width="90%"/>
 
 <br><br>
 
 ### 🔮 Sales Forecast
 
-<img src="outputs/screenshots/sales_forecast.png" width="90%"/>
+<img src="./outputs/screenshots/sales_forecast.png" width="90%"/>
 
 </div>
 
