@@ -1,3 +1,4 @@
+from pathlib import Path
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -30,8 +31,10 @@ st.write("Explore sales performance and future sales predictions.")
 # LOAD DATA
 # =========================================
 
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 df = pd.read_csv(
-    "../data/processed/clean_superstore.csv"
+    BASE_DIR / "data" / "processed" / "clean_superstore.csv"
 )
 
 df["order_date"] = pd.to_datetime(
