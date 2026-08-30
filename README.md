@@ -2,7 +2,9 @@
 
 <div align="center">
 
-<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=26&pause=1000&color=00A6A6&center=true&vCenter=true&width=700&lines=Turning+Sales+Data+into+Smart+Insights+📊;Predicting+Tomorrow's+Sales+Today+🔮;Built+with+Python+%26+Streamlit+🐍" alt="Typing Animation" />
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=26&pause=1000&color=00A6A6&center=true&vCenter=true&width=700&lines=Turning+Sales+Data+into+Smart+Insights+%F0%9F%93%8A;Predicting+Tomorrow%27s+Sales+Today+%F0%9F%94%AE;Built+with+Python+%26+Streamlit+%F0%9F%90%8D" alt="Typing Animation" />
+</p>
 
 <br>
 

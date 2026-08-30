@@ -48,4 +48,5 @@ outputs/reports/*
 Thumbs.db
 
 # Streamlit
-.streamlit/
+.streamlit/*
+!.streamlit/config.toml

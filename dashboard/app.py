@@ -18,6 +18,120 @@ st.set_page_config(
     layout="wide"
 )
 
+st.markdown("""
+<style>
+.main-title {
+    text-align: center;
+    font-size: 42px;
+    font-weight: 800;
+    background: linear-gradient(90deg, #2563EB, #0EA5E9, #38BDF8); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #B8C1CC;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.badge {
+    text-align: center;
+    color: #2563EB;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+[data-testid="stMetric"] {
+    background: white;
+    border: 1px solid #DCE7F7;
+    padding: 18px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.08);
+}
+
+[data-testid="stMetricLabel"] {
+    color: #64748B;
+    font-weight: 600;
+}
+
+[data-testid="stMetricValue"] {
+    color: #2563EB;
+    font-weight: 800;
+}
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2563EB;
+    padding: 12px 18px;
+    margin: 25px 0 12px 0;
+    border-left: 5px solid #38BDF8;
+    background: #EFF6FF;
+    border-radius: 10px;
+}
+.forecast-heading {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2563EB;
+    background: linear-gradient(90deg, #EFF6FF, #F8FAFC);
+    padding: 14px 18px;
+    margin: 25px 0 12px 0;
+    border-left: 5px solid #2563EB;
+    border-radius: 10px;
+}
+
+.forecast-heading span {
+    color: #64748B;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.forecast-heading {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2563EB;
+    background: linear-gradient(90deg, #EFF6FF, #F8FAFC);
+    padding: 14px 18px;
+    margin: 25px 0 12px 0;
+    border-left: 5px solid #2563EB;
+    border-radius: 10px;
+}
+
+.forecast-heading span {
+    color: #64748B;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+[data-testid="stDataFrame"] {
+    border: 1px solid #D9E7F7;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.08);
+    margin-top: 10px;
+}
+
+[data-testid="stDataFrame"] div[role="row"]:hover {
+    background-color: #EFF6FF !important;
+}
+
+</style>
+
+
+
+<div class="main-title">
+📊 Sales Forecasting Dashboard
+</div>
+
+<div class="subtitle">
+Turn historical sales data into meaningful insights & future predictions
+</div>
+
+<div class="badge">
+✨ AI • Data Analytics • Machine Learning
+</div>
+""", unsafe_allow_html=True)
 
 # =========================================
 # TITLE
@@ -45,8 +159,16 @@ df["order_date"] = pd.to_datetime(
 # =========================================
 # SIDEBAR FILTERS
 # =========================================
+st.sidebar.markdown("""
+<div style="text-align:center; padding:10px 0 20px 0;">
+    <div style="font-size:35px;">📊</div>
+    <h2 style="margin:0;">Dashboard Controls</h2>
+    <p style="color:#64748B; font-size:14px;">
+        Filter & explore your sales data
+    </p>
+</div>
+""", unsafe_allow_html=True)
 
-st.sidebar.header("🔎 Filters")
 
 # Year filter
 years = sorted(df["order_date"].dt.year.unique())
@@ -145,9 +267,11 @@ monthly_sales = (
 monthly_sales.index = pd.to_datetime(monthly_sales.index.astype(str))
 
 
-st.subheader(
-    f"📈 Monthly Sales Trend - {selected_year} | {selected_category} | {selected_region}"
-)
+st.markdown("""
+<div class="section-title">
+📈 Monthly Sales Trend
+</div>
+""", unsafe_allow_html=True)
 
 fig1, ax1 = plt.subplots(
     figsize=(12, 5)
@@ -183,9 +307,11 @@ col1, col2 = st.columns(2)
 
 with col1:
 
-    st.subheader(
-    f"🏷️ Sales by Category - {selected_year} | {selected_category} | {selected_region}"
-)
+    st.markdown("""
+<div class="section-title">
+🛍️ Sales by Category
+</div>
+""", unsafe_allow_html=True)
 
     category_sales = (
     filtered_df.groupby("category")["sales"]
@@ -214,9 +340,11 @@ with col1:
 
 with col2:
 
-    st.subheader(
-    f"🌎 Sales by Region - {selected_year} | {selected_category} | {selected_region}"
-)
+    st.markdown("""
+<div class="section-title">
+🌎 Sales by Region
+</div>
+""", unsafe_allow_html=True)
 
     region_sales = (
         filtered_df.groupby("region")["sales"]
@@ -247,9 +375,11 @@ with col2:
 # PROFIT BY CATEGORY
 # =========================================
 
-st.subheader(
-    f"💵 Profit by Category - {selected_year} | {selected_category} | {selected_region}"
-)
+st.markdown("""
+<div class="section-title">
+💰 Profit Analysis
+</div>
+""", unsafe_allow_html=True)
 
 category_profit = (
     filtered_df.groupby("category")["profit"]
@@ -286,7 +416,11 @@ st.pyplot(fig4)
 
 st.divider()
 
-st.subheader("🔮 Sales Forecast")
+st.markdown("""
+<div class="section-title">
+📊 Sales Forecast
+</div>
+""", unsafe_allow_html=True)
 
 
 forecast_data = monthly_sales.reset_index()
@@ -500,7 +634,11 @@ st.pyplot(fig5)
 # FORECAST TABLE
 # =========================================
 
-st.subheader("📋 Next 6 Months Forecast")
+# st.markdown("""
+# <div class="section-title">
+# 🔮 Next 6-Months Sales Forecast
+# </div>
+# """, unsafe_allow_html=True)
 
 forecast_table = pd.DataFrame({
     "Month": future_dates.strftime("%B %Y"),
@@ -510,10 +648,39 @@ forecast_table = pd.DataFrame({
     ]
 })
 
-st.dataframe(
-    forecast_table,
-    use_container_width=True,
-    hide_index=True
+st.markdown("""
+<style>
+.forecast-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 18px;
+}
+
+.forecast-table th {
+    background-color: #1565C0;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 14px;
+    border: 1px solid black;
+}
+
+.forecast-table td {
+    text-align: center;
+    padding: 12px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.markdown(
+    forecast_table.to_html(
+        index=False,
+        classes="forecast-table"
+    ),
+    unsafe_allow_html=True
 )
 
 
