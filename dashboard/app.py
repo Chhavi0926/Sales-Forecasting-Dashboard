@@ -634,11 +634,6 @@ st.pyplot(fig5)
 # FORECAST TABLE
 # =========================================
 
-# st.markdown("""
-# <div class="section-title">
-# 🔮 Next 6-Months Sales Forecast
-# </div>
-# """, unsafe_allow_html=True)
 
 forecast_table = pd.DataFrame({
     "Month": future_dates.strftime("%B %Y"),

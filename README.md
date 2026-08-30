@@ -146,13 +146,27 @@ streamlit run dashboard/app.py
 
 ## 🌐 Deployment
 
-The dashboard is designed for deployment using **Streamlit Community Cloud**.
+The **Sales Forecasting Dashboard** is successfully deployed and live on **Streamlit Community Cloud** 🚀
 
-**Main App:** `dashboard/app.py`
+<div align="center">
 
-🚀 **Live Dashboard:** Coming Soon
+### 🔮 Explore the Live Dashboard
+
+<a href="https://sales-forecasting-dashboard-3mp67ntaat6d3o9mwjcraj.streamlit.app">
+  <img src="https://img.shields.io/badge/🚀%20Live%20Dashboard-1565C0?style=for-the-badge&logo=streamlit&logoColor=white" alt="Live Dashboard"/>
+</a>
+
+<br>
+
+✨ **Interactive Sales Analytics**
+📈 **6-Month Sales Forecasting**
+🎯 **Dynamic Filters & Visualizations**
+☁️ **Deployed on Streamlit Community Cloud**
+
+</div>
 
 ---
+
 
 ## 📸 Dashboard Preview
 
